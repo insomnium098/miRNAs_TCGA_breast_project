@@ -49,11 +49,7 @@ colnames(mirnas_vst) <- nombres_mirnas_vst_mal
 
 
 
-####No se leera la matriz de NT por que los pacientes
-###con match en TP se eliminan
-#mirnas_nt <- read.csv("../../DATOS_ANALISIS/matriz_NT_MATURE_MIRNAS_BRCA_readcount.csv",header = TRUE)
-#mirnas_nt <- colnames(mirnas_nt)[2:length(colnames(mirnas_nt))]
-#mirnas_tp <- colnames(mirnas_vst)[!colnames(mirnas_vst) %in% mirnas_nt]
+
 mirnas_nt <- mirnas_vst[,1:90]
 mirnas_tp <- mirnas_vst[,91:length(colnames(mirnas_vst))]
 
