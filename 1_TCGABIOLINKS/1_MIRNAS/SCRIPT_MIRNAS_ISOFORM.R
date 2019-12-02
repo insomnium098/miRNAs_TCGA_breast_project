@@ -63,7 +63,7 @@ colnames(matriz_readcount_t) <- nombres_bien
 #Obtener la matriz
 matriz_TP <- matriz_readcount_t#subset(matriz_readcount_t, select=datos_TP)
 
-write.csv(matriz_TP,"matriz_BRCA_METASTASIS_MIRNAS_SIN_16.csv")
+write.csv(matriz_TP,"matriz_TP_BRCA_SIN_16.csv")
 
 #Que datos son Solid Tissue Normal
 
