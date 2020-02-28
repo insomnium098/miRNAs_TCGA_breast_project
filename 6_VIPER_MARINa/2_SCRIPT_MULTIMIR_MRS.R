@@ -95,7 +95,9 @@ for (mirna_nombre in mirnas_todos){
     ####Unir los dos ultimos df
     ####AQUI ERROR, HACER MERGE
     
-    resultados <- cbind(filtro_mi, resultados_unique)
+    #resultados <- cbind(filtro_mi, resultados_unique)
+    resultados <- merge(filtro_mi, resultados_unique,
+                  by.x = "Target", by.y = "target_symbol")
     #######
     #Si el datasset no existe, se crea
     if (!exists("dataset_mirnas")){
@@ -114,9 +116,9 @@ for (mirna_nombre in mirnas_todos){
 }
 
 
-write.csv(dataset_mirnas,"PREDICCION_y_VALIDACION_MRS_SIN_SPI.csv")
+write.csv(dataset_mirnas,"PREDICCION_y_VALIDACION_MRS_SIN_SPI_CORREGIDO.csv")
 
-write.table(dataset_mirnas[,1:3],"network_predicted_SIN_DPI.txt")
+#write.table(dataset_mirnas[,1:3],"network_predicted_SIN_DPI.txt")
 
 
 
